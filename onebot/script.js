@@ -258,12 +258,8 @@ function generateBytes(n) {
 // -------------------------全局变量分区-------------------------
 
 // 文本消息全局变量
-var textCallbackFuncAddr = baseAddr.add({
-{.
-    textCallbackFuncAddr
-}
-})
-;
+// 文本消息全局变量
+var textCallbackFuncAddr = baseAddr.add({{.textCallbackFuncAddr}});
 var protobufAddr = textCallbackFuncAddr.add(0x44);
 var patchTextProtobufAddr = textCallbackFuncAddr.add(0x20);
 var patchTextProtobufByte
@@ -273,51 +269,20 @@ var textCgiAddr = ptr(0);
 var sendTextMessageAddr = ptr(0);
 var textMessageAddr = ptr(0);
 var textProtoX1PayloadAddr = ptr(0);
-var sendMessageCallbackFunc = baseAddr.add({
-{.
-    sendMessageCallbackFunc
-}
-})
-;
+var sendMessageCallbackFunc = baseAddr.add({{.sendMessageCallbackFunc}});
 
 
 // 双方公共使用的地址
 var triggerX1Payload;
 var triggerX0;
-var req2bufEnterAddr = baseAddr.add({
-{.
-    req2bufEnterAddr
-}
-})
-;
-var req2bufExitAddr = baseAddr.add({
-{.
-    req2bufExitAddr
-}
-})
-;
-var sendFuncAddr = baseAddr.add({
-{.
-    sendFuncAddr
-}
-})
-;
+var req2bufEnterAddr = baseAddr.add({{.req2bufEnterAddr}});
+var req2bufExitAddr = baseAddr.add({{.req2bufExitAddr}});
+var sendFuncAddr = baseAddr.add({{.sendFuncAddr}});
 var insertMsgAddr = ptr(0);
 var sendMsgType = "";
-var buf2RespAddr = baseAddr.add({
-{.
-    buf2RespAddr
-}
-})
-;
+var buf2RespAddr = baseAddr.add({{.buf2RespAddr}});
 
-// 图片消息全局变量
-var imageCallbackFuncAddr = baseAddr.add({
-{.
-    imageCallbackFuncAddr
-}
-})
-;
+var imageCallbackFuncAddr = baseAddr.add({{.imageCallbackFuncAddr}});
 var imgProtobufAddr = imageCallbackFuncAddr.add(0x54);
 var patchImgProtobufFunc1 = imageCallbackFuncAddr.add(0x10);
 var patchImgProtobufFunc1Byte;
@@ -326,69 +291,17 @@ var patchImgProtobufFunc2Byte;
 var imgProtobufDeleteAddr = imageCallbackFuncAddr.add(0x6c);
 var imgProtobufDeleteAddrByte;
 
-var uploadImageAddr = baseAddr.add({
-{.
-    uploadImageAddr
-}
-})
-;
-var CndOnCompleteAddr = baseAddr.add({
-{.
-    CndOnCompleteAddr
-}
-})
-;
-var imgMessageCallbackFunc1 = baseAddr.add({
-{.
-    imgMessageCallbackFunc1
-}
-})
-;
-var uploadGetCallbackWrapperAddr = baseAddr.add({
-{.
-    uploadGetCallbackWrapperAddr
-}
-})
-;
-var uploadGetCallbackWrapperFuncAddr = baseAddr.add({
-{.
-    uploadGetCallbackWrapperFuncAddr
-}
-})
-;
-var uploadOnCompleteAddr = baseAddr.add({
-{.
-    uploadOnCompleteAddr
-}
-})
-;
-var uploadOnCompleteFuncAddr = baseAddr.add({
-{.
-    uploadOnCompleteFuncAddr
-}
-})
-;
-var downloadImagAddr = baseAddr.add({
-{.
-    downloadImagAddr
-}
-})
-;
-var startDownloadMedia = baseAddr.add({
-{.
-    startDownloadMedia
-}
-})
-var downloadFileAddr = baseAddr.add({
-{.
-    downloadFileAddr
-}
-})
-var downloadVideoAddr = baseAddr.add({
-{.
-    downloadVideoAddr
-}
-})
+var uploadImageAddr = baseAddr.add({{.uploadImageAddr}});
+var CndOnCompleteAddr = baseAddr.add({{.CndOnCompleteAddr}});
+var imgMessageCallbackFunc1 = baseAddr.add({{.imgMessageCallbackFunc1}});
+var uploadGetCallbackWrapperAddr = baseAddr.add({{.uploadGetCallbackWrapperAddr}});
+var uploadGetCallbackWrapperFuncAddr = baseAddr.add({{.uploadGetCallbackWrapperFuncAddr}});
+var uploadOnCompleteAddr = baseAddr.add({{.uploadOnCompleteAddr}});
+var uploadOnCompleteFuncAddr = baseAddr.add({{.uploadOnCompleteFuncAddr}});
+var downloadImagAddr = baseAddr.add({{.downloadImagAddr}});
+var startDownloadMedia = baseAddr.add({{.startDownloadMedia}})
+var downloadFileAddr = baseAddr.add({{.downloadFileAddr}})
+var downloadVideoAddr = baseAddr.add({{.downloadVideoAddr}})
 
 var downloadGlobalX0;
 var downloadFileX1 = ptr(0)
